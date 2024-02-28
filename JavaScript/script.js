@@ -53,6 +53,6 @@ function tampilkanHasil() {
 
     const app = document.getElementById('app');
     app.innerHTML = `
-        Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlahPilihan} pilihan yaitu ${pilihanFinal}, dan saya memilih ${pilihanFinal}
+        Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlahPilihan} pilihan dan saya memilih ${pilihanFinal}
     `;
 }
