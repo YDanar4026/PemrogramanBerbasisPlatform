@@ -1,0 +1,84 @@
+jika dirapikan menggunakan css menjadi seperti ini
+
+
+Nama : <Teks Nama>
+
+
+
+Jumlah Pilihan : <Jml>
+
+
+
+OK
+
+
+
+
+
+
+
+
+Nama : <Teks Nama>
+
+
+
+Jumlah Pilihan : <Jml>
+
+
+
+OK
+
+
+
+Pilihan 1 : <Teks Pilihan 1>
+Pilihan 2 : <Teks Pilihan 2>
+Pilihan 3 : <Teks Pilihan 3>
+Pilihan 4 : <Teks Pilihan 4>
+Pilihan 5 : <Teks Pilihan 5>
+
+
+
+OK
+
+
+
+
+
+
+
+Nama : <Teks Nama>
+
+
+
+Jumlah Pilihan : <Jml>
+
+
+
+OK
+
+
+
+Pilihan 1 : <Teks Pilihan 1>
+Pilihan 2 : <Teks Pilihan 2>
+Pilihan 3 : <Teks Pilihan 3>
+Pilihan 4 : <Teks Pilihan 4>
+Pilihan 5 : <Teks Pilihan 5>
+
+
+OK
+
+
+Pilihan : 
+
+⊙ Teks Pilihan 1
+〇 Teks Pilihan 2
+〇 Teks Pilihan 3
+〇 Teks Pilihan 4
+〇 Teks Pilihan 5
+
+
+[Atau dalam bentuk Drop Down]
+
+Teks Pilihan 1
+
+OK
