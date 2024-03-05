@@ -60,6 +60,6 @@ header {
     margin-left: 15px; /* Memberikan sedikit indentasi */
 }
 
-#app label input[type="radio"] {
-    /* Gaya khusus untuk radio button bisa ditambahkan di sini jika diperlukan */
-}
+/* #app label input[type="radio"] {
+     Gaya khusus untuk radio button bisa ditambahkan di sini jika diperlukan 
+}  /*
