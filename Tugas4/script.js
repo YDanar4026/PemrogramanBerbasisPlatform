@@ -3,7 +3,6 @@ function buatInputan() {
     const jumlahPilihan = parseInt(document.getElementById('jumlahPilihan').value);
     const app = document.getElementById('app');
     
-    // Bersihkan app kecuali input nama dan jumlah pilihan
     app.innerHTML = `
         <label for="nama">Nama:</label>
         <input type="text" id="nama" value="${nama}" disabled>
@@ -14,7 +13,6 @@ function buatInputan() {
         <button onclick="buatInputan()" disabled>OK</button>
     `;
 
-    // Tambahkan input untuk setiap pilihan
     for (let i = 1; i <= jumlahPilihan; i++) {
         app.innerHTML += `
             <label for="pilihan${i}">Pilihan ${i}:</label>
@@ -22,7 +20,6 @@ function buatInputan() {
         `;
     }
 
-    // Tambahkan tombol submit
     app.innerHTML += `<button onclick="buatPilihan()">OK</button>`;
 }
 
@@ -34,11 +31,10 @@ function buatPilihan() {
     for (let i = 1; i <= jumlahPilihan; i++) {
         pilihan.push(document.getElementById(`pilihan${i}`).value);
     }
-    
+
     const app = document.getElementById('app');
     app.innerHTML += `<div id="pilihanFinal">Pilihan: <br>`;
 
-    // Buat radio button atau dropdown
     pilihan.forEach((item, index) => {
         app.innerHTML += `<input type="radio" name="pilihan" value="${item}"> ${item}<br>`;
     });
@@ -48,11 +44,21 @@ function buatPilihan() {
 
 function tampilkanHasil() {
     const nama = document.getElementById('nama').value;
-    const jumlahPilihan = document.getElementById('jumlahPilihan').value;
+    const jumlahPilihan = parseInt(document.getElementById('jumlahPilihan').value);
     const pilihanFinal = document.querySelector('input[name="pilihan"]:checked').value;
-
+    let daftarPilihan = '';
+    
+    for (let i = 1; i <= jumlahPilihan; i++) {
+        let pilihanText = document.getElementById(`pilihan${i}`).value;
+        if (i === jumlahPilihan) { 
+            daftarPilihan += `dan ${pilihanText}`;
+        } else {
+            daftarPilihan += `${pilihanText}, `;
+        }
+    }
+    
     const app = document.getElementById('app');
     app.innerHTML = `
-        Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlahPilihan} pilihan dan saya memilih ${pilihanFinal}
+        Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlahPilihan} pilihan yaitu ${daftarPilihan} dan saya memilih ${pilihanFinal}
     `;
 }

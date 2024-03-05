@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Warna latar belakang */
-    color: #333; /* Warna teks */
+    background-color: #f0f0f0; 
+    color: #333; 
 }
 
 header {
@@ -13,53 +13,52 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white; /* Warna latar belakang untuk area aplikasi */
+    background-color: white; 
     padding: 20px;
-    border-radius: 8px; /* Memberikan border radius */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Menambahkan shadow untuk memberikan depth */
-    max-width: 500px; /* Maksimal lebar */
-    margin: auto; /* Tengah secara horizontal */
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    max-width: 500px; 
+    margin: auto; 
 }
 
 #app label, #app input, #app button {
-    margin: 10px 0; /* Memberikan margin atas bawah */
+    margin: 10px 0; 
 }
 
 #app input[type="text"], #app input[type="number"] {
     padding: 10px;
-    border: 1px solid #ccc; /* Border input */
-    border-radius: 4px; /* Border radius input */
-    width: calc(100% - 22px); /* Mengurangi lebar untuk padding dan border */
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: calc(100% - 22px); 
 }
 
 #app button {
     cursor: pointer;
     padding: 10px 15px;
-    background-color: #007bff; /* Warna background tombol */
-    color: white; /* Warna teks tombol */
+    background-color: #007bff; 
+    color: white; 
     border: none;
     border-radius: 4px;
-    transition: background-color 0.3s ease; /* Transisi untuk hover */
+    transition: background-color 0.3s ease; 
 }
 
 #app button:hover {
-    background-color: #0056b3; /* Warna background tombol saat di-hover */
+    background-color: #0056b3; 
 }
 
 #app button:disabled {
-    background-color: #ccc; /* Warna background tombol saat disabled */
+    background-color: #ccc; 
 }
 
-/* Styling khusus untuk radio buttons dan label mereka */
 #app input[type="radio"] {
     margin-right: 5px;
 }
 
 #app label {
-    display: block; /* Membuat label block agar radio button tampil di baris baru */
-    margin-left: 15px; /* Memberikan sedikit indentasi */
+    display: block; 
+    margin-left: 15px; 
 }
 
 /* #app label input[type="radio"] {
-     Gaya khusus untuk radio button bisa ditambahkan di sini jika diperlukan 
+     
 }  /*
