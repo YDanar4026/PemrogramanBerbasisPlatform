@@ -1,3 +1,39 @@
+modifikasi agar menampilkan
+
+Hallo, nama saya <Teks Nama>, saya mempunyai sejumlah <Jml> pilihan yaitu <Teks Pilihan 1>, <Teks Pilihan 2>, <Teks Pilihan dst>, dan saya memilih <Teks Pilihan >
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 - JavaScript</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Yusuf Danar Indra Setiawan</h1>
+        <h2>225314028</h2>
+        <img src="fotoku.jpg" alt="Foto Mahasiswa" /> 
+    </header>
+
+    <div id="app">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama">
+        
+        <label for="jumlahPilihan">Jumlah Pilihan:</label>
+        <input type="number" id="jumlahPilihan">
+        
+        <button onclick="buatInputan()">OK</button>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
+
+
 function buatInputan() {
     const nama = document.getElementById('nama').value;
     const jumlahPilihan = parseInt(document.getElementById('jumlahPilihan').value);
@@ -75,29 +111,77 @@ function buatPilihan() {
 }
 
 function tampilkanHasil() {
-    const nama = document.getElementById('nama').value; // Mengambil nama
-    const pilihanRadios = document.getElementsByName('pilihan'); // Mengambil semua radio buttons dengan nama 'pilihan'
-    let pilihanTerpilih;
-    
-    for (const radio of pilihanRadios) {
-        if (radio.checked) { // Mengecek radio button mana yang terpilih
-            pilihanTerpilih = radio.value;
-            break;
-        }
-    }
-
-    // Mengambil semua pilihan untuk menyusun daftar pilihan
-    const jumlahPilihan = parseInt(document.getElementById('jumlahPilihan').value);
-    let semuaPilihan = [];
-    for (let i = 1; i <= jumlahPilihan; i++) {
-        semuaPilihan.push(document.getElementById(`pilihan${i}`).value);
-    }
-
-    // Membersihkan app dan menampilkan hasil
-    var app = document.getElementById('app');
-    app.innerHTML = ''; // Membersihkan konten sebelumnya
-
-    const hasil = document.createElement('p');
-    hasil.textContent = `Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlahPilihan} pilihan yaitu ${semuaPilihan.join(', ')}, dan saya memilih ${pilihanTerpilih}.`;
-    app.appendChild(hasil);
+    // Fungsi ini seharusnya diperbarui untuk menghapus atau menonaktifkan input sebelumnya
+    // dan menampilkan hasil pilihan yang dibuat pengguna.
+    // Implementasi spesifik akan tergantung pada bagaimana Anda ingin menampilkan hasilnya.
 }
+
+// Anda perlu menyesuaikan atau menambahkan logika dalam tampilkanHasil()
+// untuk menangani apa yang harus dilakukan setelah pengguna memilih salah satu pilihan.
+
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; 
+    color: #333; 
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    max-width: 500px; 
+    margin: auto; 
+}
+
+#app label, #app input, #app button {
+    margin: 10px 0; 
+}
+
+#app input[type="text"], #app input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: calc(100% - 22px); 
+}
+
+#app button {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; 
+}
+
+#app button:hover {
+    background-color: #0056b3; 
+}
+
+#app button:disabled {
+    background-color: #ccc; 
+}
+
+#app input[type="radio"] {
+    margin-right: 5px;
+}
+
+#app label {
+    display: block; 
+    margin-left: 15px; 
+}
+
+/* #app label input[type="radio"] {
+     
+}  /*
