@@ -1,0 +1,107 @@
+Buat halaman “to do list“ dengan bahasa PHP, dimana halaman tersebut baru bisa diakses setelah melewati halaman login. Halaman login dibuat sedemikian hingga daftar usernya tersimpan dalam sebuah database, dengan password yang terenkripsi. Salah satu username-nya adalah ‘admin’ dengan password ‘nim-anda’. Contoh tampilan halaman login adalah sebagai berikut :
+
+
+Login
+
+
+User Name : 
+
+Password  : 
+
+	   Submit
+
+
+
+
+
+
+
+Setelah berhasil login, maka akan muncul tampilan halaman “to do list” sebagai berikut : 
+
+
+		<Teks to do>					Tambah
+
+
+
+
+
+
+
+Jika pada <Teks to do> dimasukan kata ‘Belajar PHP’ kemudian tombol / hyperlink <Tambah> ditekan maka tampilan akan berubah menjadi 
+
+
+		<Teks to do>					Tambah
+
+
+		Belajar PHP				Selesai		Hapus
+
+
+
+
+
+Jika secara berturut-turut pada <Teks to do> ditambakan kata ‘Belajar Laravel’ dan ‘Belajar restAPI’ maka tampilan akan berubah menjadi 
+
+
+
+		<Teks to do>					Tambah
+
+
+		Belajar PHP				Selesai		Hapus
+
+
+		Belajar Laravel				Selesai		Hapus
+
+
+		Belajar restAPI				Selesai		Hapus
+
+
+
+
+
+
+
+
+Jika tombol / hyperlink <Selesai> pada ‘Belajar PHP’ ditekan maka tampilannya menjadi 
+
+
+
+		<Teks to do>					Tambah
+
+
+		Belajar PHP				Selesai		Hapus
+
+
+		Belajar Laravel				Selesai		Hapus
+
+
+		Belajar restAPI				Selesai		Hapus
+
+
+
+
+
+
+
+Jika tombol / hyperlink <Hapus> pada ‘Belajar restAPI’ ditekan maka tampilannya menjadi 
+
+
+
+		<Teks to do>					Tambah
+
+
+		Belajar PHP				Selesai		Hapus
+
+
+		Belajar Laravel				Selesai		Hapus
+
+
+
+
+
+
+
+
+CATATAN : 
+Halaman html diberi header yang berisi Nama, Nim dan Foto
+Akan mendapatkan nilai lebih jika tampilan dibuat bagus, dengan css ataupun adanya animasi
+
