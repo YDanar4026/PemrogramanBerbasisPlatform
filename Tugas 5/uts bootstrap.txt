@@ -1,0 +1,6 @@
+
+UTS 1 - CSS, Js dan BootstrapAssignment
+Restricted Available from 13 April 2024, 12:40 AM
+Buat sebuah web-pages yang memanfaatkan CSS & Javascript - boleh "pinjam" CSS & js pihak lain, misalkan Bootstrap atau Tailwind - Gunakan komponen / class sebanyak mungkin, misalkan: navbar, tables, card, carousel, dsb. Lihat pdf terlampir.
+
+Kumpulkan file / folder dalam bentuk zip di LMS sebelum tanggal 15 April 2023 jam 00.00 WIB
