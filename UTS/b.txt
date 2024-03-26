@@ -1,3 +1,134 @@
+Dengan memanfaatkan Bootstrap agar halamannya resposif (khususnya Navbar atau Navs &
+tabs atau scrollspy) buat sebuah halaman yang mempunyai 5 tabs / section, yaitu:
+1. Beranda
+Berisi sebuah foto profil dilengkapi dengan identitas diri (Nama Lengkap dan NIM)
+(gunakan fasilitas bootstrap jumbotron, image, dsb)
+2. Tentang
+Memuat paragraf gambaran diri anda, buat dalam format dua kolom center (gunakan
+fasilitas bootstrap columns)
+3. Kisahku
+Berisi foto-foto anda bersama keluarga dan teman-teman anda (gunakan fasilitas
+bootstrap card)
+4. Pendidikan
+Berisi sebuah tabel (tahun, nama sekolah, alamat sekolah) riwayat pendidikan / sekolah
+anda (gunakan fasilitas bootstrap untuk tabel)
+5. Tugas
+Berisi modifikasi tugas 4 - javascript(tugas dibawah), dengan perubahan sebagai berikut:
+a. Input yang dimasukkan adalah:
+■ Nama Depan dan Nama Belakang (format teks)
+■ Email (format email)
+■ Jumlah Pilihan Hobi (numerik / integer)
+(gunakan fasilitas bootstrap form control, agar user tidak salah memasukkan
+data)
+b. Setelah user memasukkan jumlah hobi, maka ketika tombol [Oke] ditekan, user
+diminta memasukkan pilihan hobi (format teks) sesuai dengan jumlah yang
+dimasukkan
+c. Setelah pilihan hobi dimasukkan dan tombol [Oke] ditekan, maka akan muncul
+daftar pilihan berupa check box (user boleh memilih lebih dari satu)
+d. Setelah user memilih dan tombol [Oke] ditekan, maka akan muncul kalimat
+sebagai berikut:
+Hallo, nama saya <Teks Nama Depan> <Teks Nama Belakang>, dengan
+email <Email>, saya mempunyai sejumlah <Jml> pilihan hobi yaitu <Teks
+Pilihan 1>, <Teks Pilihan 2>, <Teks Pilihan dst>, dan saya menyukai <Teks
+Pilihan, Teks Pilihan … >
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 4 - JavaScript</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Yusuf Danar Indra Setiawan</h1>
+        <h2>225314028</h2>
+        <img src="fotoku.jpg" alt="Foto Mahasiswa" /> 
+    </header>
+
+    <div id="app">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama">
+        
+        <label for="jumlahPilihan">Jumlah Pilihan:</label>
+        <input type="number" id="jumlahPilihan">
+        
+        <button onclick="buatInputan()">OK</button>
+    </div>
+
+    <script src="script.js"></script> 
+</body>
+</html>
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; 
+    color: #333; 
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white; 
+    padding: 20px;
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+    max-width: 500px; 
+    margin: auto; 
+}
+
+#app label, #app input, #app button {
+    margin: 10px 0; 
+}
+
+#app input[type="text"], #app input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    width: calc(100% - 22px); 
+}
+
+#app button {
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: #007bff; 
+    color: white; 
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease; 
+}
+
+#app button:hover {
+    background-color: #0056b3; 
+}
+
+#app button:disabled {
+    background-color: #ccc; 
+}
+
+#app input[type="radio"] {
+    margin-right: 5px;
+}
+
+#app label {
+    display: block; 
+    margin-left: 15px; 
+}
+
+/* #app label input[type="radio"] {
+     
+}  /*
+
+
 function buatInputan() {
     const nama = document.getElementById('nama').value;
     const jumlahPilihan = parseInt(document.getElementById('jumlahPilihan').value);
@@ -98,6 +229,6 @@ function tampilkanHasil() {
     app.innerHTML = ''; // Membersihkan konten sebelumnya
 
     const hasil = document.createElement('p');
-    hasil.textContent = `Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlahPilihan} pilihan hobi yaitu ${semuaPilihan.join(', ')}, dan saya memilih ${pilihanTerpilih}.`;
+    hasil.textContent = `Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlahPilihan} pilihan yaitu ${semuaPilihan.join(', ')}, dan saya memilih ${pilihanTerpilih}.`;
     app.appendChild(hasil);
 }

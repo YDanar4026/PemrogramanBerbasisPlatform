@@ -1,4 +1,56 @@
-buatkan css dan javascript secara terpisah menggunakan html scrollspy dibawah tentang perkenalan diri dan dibuat dengan rapi
+buatkan javascript secara terpisah menggunakan css, html scrollspy(penjelasan mobil), carousel(gambar mobil), dan card(penjual mobil) dibawah tentang iklan mobil ford mustang gt500 dan dibuat dengan rapi
+
+
+
+
+/* style.css */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    background-color: #f8f9fa;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+  }
+  
+  .nav-link.active {
+    background-color: #007bff;
+    color: white !important;
+  }
+  
+  .scrollspy-example {
+    position: relative;
+    height: 400px;
+    overflow-y: scroll;
+    margin-top: 20px;
+  }
+  
+  h4 {
+    margin-top: 20px;
+  }
+  
+  .navbar-brand, .nav-link {
+    color: #007bff !important;
+  }
+  
+  .nav-link {
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+  }
+  
+  .nav-link:hover {
+    background-color: #e9ecef;
+  }
+  
+  .dropdown-menu {
+    border-radius: 0.25rem;
+  }
+  
+  .dropdown-item:active {
+    background-color: #007bff;
+    color: white;
+  }
 
 
 <!doctype html>
@@ -47,5 +99,34 @@ buatkan css dan javascript secara terpisah menggunakan html scrollspy dibawah te
     <h4 id="scrollspyHeading5">Fifth heading</h4>
     <p>This is some placeholder content for the scrollspy page. Note that as you scroll down the page, the appropriate navigation link is highlighted. It's repeated throughout the component example. We keep adding some more example copy here to emphasize the scrolling and highlighting.</p>
   </div>
+
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="..." class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
 
 </html>
