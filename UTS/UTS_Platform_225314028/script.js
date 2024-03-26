@@ -1,14 +1,18 @@
 function buatInputan() {
-    const nama = document.getElementById('nama').value;
-    const jumlahPilihan = parseInt(document.getElementById('jumlahPilihan').value);
-    var app = document.getElementById('app'); // var digunakan sesuai permintaan
+    const namaDepan = document.getElementById('namaDepan').value;
+    const namaBelakang = document.getElementById('namaBelakang').value;
+    const email = document.getElementById('email').value;
+    const jumlahPilihanInput = parseInt(document.getElementById('jumlahPilihan').value); // Ubah nama variabel menjadi jumlahPilihanInput
+    var app = document.getElementById('app'); 
 
     // Membersihkan konten app sebelum menambahkan elemen baru
     app.textContent = '';
 
     // Membuat dan menambahkan elemen-elemen form yang disabled
-    tambahElemenInput(app, 'Nama:', 'nama', nama, true);
-    tambahElemenInput(app, 'Jumlah Pilihan:', 'jumlahPilihan', jumlahPilihan, true);
+    tambahElemenInput(app, 'Nama Depan:', 'namaDepan', namaDepan, true);
+    tambahElemenInput(app, 'Nama Belakang:', 'namaBelakang', namaBelakang, true);
+    tambahElemenInput(app, 'Email:', 'email', email, true);
+    tambahElemenInput(app, 'Jumlah Pilihan Hobi:', 'jumlahPilihan', jumlahPilihanInput, true); // Ubah nama variabel menjadi jumlahPilihanInput
 
     // Menonaktifkan button setelah digunakan
     var okButton = document.createElement('button');
@@ -16,15 +20,15 @@ function buatInputan() {
     okButton.disabled = true;
     app.appendChild(okButton);
 
-    // Membuat inputan untuk setiap pilihan
-    for (let i = 1; i <= jumlahPilihan; i++) {
-        tambahElemenInput(app, `Pilihan ${i}:`, `pilihan${i}`, '', false);
+    // Membuat inputan untuk setiap pilihan hobi
+    for (let i = 1; i <= jumlahPilihanInput; i++) { // Menggunakan jumlahPilihanInput
+        tambahElemenInput(app, `Pilihan Hobi ${i}:`, `hobi${i}`, '', false);
     }
 
-    // Membuat button untuk submit pilihan
+    // Membuat button untuk submit pilihan hobi
     var submitButton = document.createElement('button');
     submitButton.textContent = 'OK';
-    submitButton.onclick = buatPilihan;
+    submitButton.onclick = buatCheckbox;
     app.appendChild(submitButton);
 }
 
@@ -42,29 +46,30 @@ function tambahElemenInput(parent, labelText, id, value, disabled) {
     parent.appendChild(input);
 }
 
-function buatPilihan() {
+function buatCheckbox() {
     const jumlahPilihan = parseInt(document.getElementById('jumlahPilihan').value);
-    var app = document.getElementById('app'); // var digunakan sesuai permintaan
+    var app = document.getElementById('app'); 
 
-    // Membuat div untuk menampung pilihan final
-    var pilihanFinalDiv = document.createElement('div');
-    pilihanFinalDiv.id = 'pilihanFinal';
-    app.appendChild(pilihanFinalDiv);
+    // Membuat div untuk menampung checkbox pilihan hobi
+    var checkboxDiv = document.createElement('div');
+    app.appendChild(checkboxDiv);
 
-    // Mengumpulkan pilihan dan menambahkannya sebagai radio button
+    // Mengumpulkan pilihan hobi dan menambahkannya sebagai checkbox
     for (let i = 1; i <= jumlahPilihan; i++) {
-        var pilihanValue = document.getElementById(`pilihan${i}`).value;
-        var radioInput = document.createElement('input');
-        radioInput.type = 'radio';
-        radioInput.name = 'pilihan';
-        radioInput.value = pilihanValue;
+        var hobiValue = document.getElementById(`hobi${i}`).value;
+
+        var checkboxInput = document.createElement('input');
+        checkboxInput.type = 'checkbox';
+        checkboxInput.id = `hobiCheckbox${i}`;
+        checkboxInput.value = hobiValue;
 
         var label = document.createElement('label');
-        label.textContent = pilihanValue;
+        label.setAttribute('for', `hobiCheckbox${i}`);
+        label.textContent = hobiValue;
 
-        pilihanFinalDiv.appendChild(radioInput);
-        pilihanFinalDiv.appendChild(label);
-        pilihanFinalDiv.appendChild(document.createElement('br'));
+        checkboxDiv.appendChild(checkboxInput);
+        checkboxDiv.appendChild(label);
+        checkboxDiv.appendChild(document.createElement('br'));
     }
 
     // Membuat button untuk mengonfirmasi pilihan final
@@ -75,29 +80,26 @@ function buatPilihan() {
 }
 
 function tampilkanHasil() {
-    const nama = document.getElementById('nama').value; // Mengambil nama
-    const pilihanRadios = document.getElementsByName('pilihan'); // Mengambil semua radio buttons dengan nama 'pilihan'
-    let pilihanTerpilih;
-    
-    for (const radio of pilihanRadios) {
-        if (radio.checked) { // Mengecek radio button mana yang terpilih
-            pilihanTerpilih = radio.value;
-            break;
+    const namaDepan = document.getElementById('namaDepan').value;
+    const namaBelakang = document.getElementById('namaBelakang').value;
+    const email = document.getElementById('email').value;
+    const jumlahPilihanInput = parseInt(document.getElementById('jumlahPilihan').value);
+    var app = document.getElementById('app'); 
+
+    let pilihanHobi = [];
+
+    // Mengumpulkan pilihan hobi yang dipilih
+    for (let i = 1; i <= jumlahPilihanInput; i++) { // Menggunakan jumlahPilihanInput
+        var checkbox = document.getElementById(`hobiCheckbox${i}`);
+        if (checkbox.checked) {
+            pilihanHobi.push(checkbox.value);
         }
     }
 
-    // Mengambil semua pilihan untuk menyusun daftar pilihan
-    const jumlahPilihan = parseInt(document.getElementById('jumlahPilihan').value);
-    let semuaPilihan = [];
-    for (let i = 1; i <= jumlahPilihan; i++) {
-        semuaPilihan.push(document.getElementById(`pilihan${i}`).value);
-    }
-
     // Membersihkan app dan menampilkan hasil
-    var app = document.getElementById('app');
-    app.innerHTML = ''; // Membersihkan konten sebelumnya
+    app.innerHTML = '';
 
     const hasil = document.createElement('p');
-    hasil.textContent = `Hallo, nama saya ${nama}, saya mempunyai sejumlah ${jumlahPilihan} pilihan hobi yaitu ${semuaPilihan.join(', ')}, dan saya memilih ${pilihanTerpilih}.`;
+    hasil.textContent = `Hallo, nama saya ${namaDepan} ${namaBelakang}, dengan email ${email}, saya mempunyai sejumlah ${jumlahPilihanInput} pilihan hobi yaitu ${pilihanHobi.join(', ')}, dan saya menyukai ${pilihanHobi.join(', ')}.`;
     app.appendChild(hasil);
 }
